@@ -1,6 +1,6 @@
 import React, {Component, useEffect, useState} from 'react';
-import {showSubTitle} from "./showSubTitle";
-import '../Home.css';
+import {showSubTitle} from "../showSubTitle/showSubTitle";
+import './ShowTitle.css';
 export const ShowTitle=()=>{
     var count=0;
     let mainTitle="Exploring COVID-19 Cases Around the World";

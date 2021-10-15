@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Home.css';
+import './Introduction.css';
 export const Introduction=()=>{
     let introTitle="Introduction";
     return (

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { useHistory } from "react-router";
-import './NavBar.css';
+import './Navbar.css';
 
 export const NavBar = (props)=>{
     const {navItems, selectedIndex, onItemClick} = props;

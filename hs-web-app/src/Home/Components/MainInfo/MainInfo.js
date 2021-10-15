@@ -1,5 +1,5 @@
 import React, {useEffect,} from 'react';
-import '../Home.css';
+import './MainInfo.css';
 import {gsap} from "gsap";
 export const MainInfo=()=>{
     useEffect(()=>{

@@ -1,0 +1,11 @@
+#section3 > div{
+    width:80%;
+    margin: 0 auto;
+    background-color:#474973;
+    color:white;
+    padding: 10px;
+    border-radius: 15px;
+}
+#section3 .title{
+    text-decoration: underline;
+}
