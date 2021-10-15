@@ -1,0 +1,57 @@
+
+.rayDiv{
+    margin: 20px 0;
+    text-align: center;
+    height: 600px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.rayPosition{
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: underline;
+    margin: 10px;
+    display:flex;
+}
+.rayDiv>div{
+    /*
+    display:flex;
+    justify-content: center;
+    align-items: center;*/
+}
+.rayImageDiv img{
+    width:230px;
+    height:230px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.rayInfo{
+    margin-left: 20px;
+    text-align: center;
+}
+.rayInfo>div{
+    margin: 10px;
+}
+.rayInfo .rayName,.rayInfo .rayTitle,.rayInfo .rayOrg{
+    display:flex;
+    justify-content: center;
+}
+.rayInfo .rayName{
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.rayInfo .rayRoles{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.rayInfo .rayRoles>div{
+    padding: 5px;
+    background-color:#29335C;
+    color:white;
+    margin: 0 5px;
+    border-radius: 15px;
+}

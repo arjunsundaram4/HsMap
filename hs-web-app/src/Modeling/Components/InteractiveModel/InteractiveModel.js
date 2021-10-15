@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import './InteractiveModel.css';
 import * as d3 from 'd3';
 
 const SEIR_IMAGE_PATH = '/assets/seir-model.png';
 
-//function InteractiveModel() {
-class InteractiveModel extends Component {
+
+export class InteractiveModel extends Component {
 	constructor(props) {
 		super(props);
 		this.myChart = React.createRef();
@@ -195,7 +196,7 @@ class InteractiveModel extends Component {
 
 	render() {
 		return (
-			<div className={"interactiveDiv"}>
+			<div className={"modelContent interactiveDiv"}>
 				<div id="parameters-outer-box">
 					<h4 className={"title"}>Control The Model Parameters</h4>
 					<div id="parameters-control-box">
@@ -284,4 +285,3 @@ class InteractiveModel extends Component {
 	}
 }
 
-export default InteractiveModel;

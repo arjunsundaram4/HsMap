@@ -1,7 +1,7 @@
 import React from "react";
-import './Team.css';
+import './Profile.css';
 
-function Profile({ name, avatar, title, organization, roles, link }) {
+export const Profile = ({ name, avatar, title, organization, roles, link })=>{
     return (
         <div className={"eachProfile"}>
             <div class={"profileInner"}>
@@ -29,5 +29,3 @@ function Profile({ name, avatar, title, organization, roles, link }) {
         </div>
     );
 }
-
-export default Profile;

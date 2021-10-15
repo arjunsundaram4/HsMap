@@ -7,7 +7,7 @@ import { MainTableau } from './Components/MainTableau';
 import { MainInfo } from './Components/MainInfo';
 import {EndSection} from './Components/EndSection'
 import { Introduction } from './Components/Introduction';
-import {createRandomNumber} from "../ Repository/RepositoryFunction";
+import {createRandomNumber} from "../Repository/RepositoryFunction";
 
 gsap.registerPlugin(ScrollTrigger);
 // Tableau dashboard settings

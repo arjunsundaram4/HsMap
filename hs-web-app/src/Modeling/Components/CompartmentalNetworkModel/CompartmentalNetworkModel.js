@@ -3,10 +3,10 @@ import React, {Component} from 'react';
 const SEIR_IMAGE_PATH = '/assets/seir-model.png';
 const NETWORK_IMAGE_PATH = '/assets/network-counties.png';
 
-class CompartmentalNetworkModel extends Component{
+export class CompartmentalNetworkModel extends Component{
 	render() {
 		return (
-			<div className={"compartmentalDiv"}>
+			<div className={"modelContent"}>
 				<h4 className={"title"}>The Basics</h4>
 				<p>
 					Compartmental models are commonly used for infectious diseases.
@@ -47,4 +47,4 @@ class CompartmentalNetworkModel extends Component{
 	}
 }
 
-export default CompartmentalNetworkModel;
+

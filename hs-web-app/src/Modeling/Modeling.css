@@ -1,17 +1,8 @@
-.modeling-navbar {
-    margin-top: 1em;
-}
-.topLine{
-    width:80%;
-    margin: 0 auto;
-}
-
-
-.fourierDiv,.compartmentalDiv,.interactiveDiv{
+.modelContent{
     width: 80%;
     margin: 0 auto;
 }
-.fourierDiv a,.compartmentalDiv a{
+.modelContent a,.modelContent a{
     color:#0F8B8D;
 }
 .title{
@@ -23,26 +14,3 @@
 }
 
 
-
-@keyframes tabBreathingAnimate{
-    0%{
-        height: 0%;
-    }
-    50%{
-        height: 50%;
-    }
-    100%{
-        height: 0%;
-    }
-}
-@keyframes tabBreathingAnimateText{
-    0%{
-        color:black;
-    }
-    50%{
-        color:white;
-    }
-    100%{
-        color:black;
-    }
-}
