@@ -1,5 +1,5 @@
 import React, {useEffect,useState} from 'react';
-import '../Home.css';
+import './MainTableau.css';
 import {gsap} from "gsap";
 export const MainTableau=()=>{
     const [allValues,setAllValues]=useState({

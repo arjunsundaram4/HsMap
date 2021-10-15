@@ -2,11 +2,11 @@ import React, {Component, useEffect, useState} from 'react';
 import './Home.css';
 import {gsap,Power3,Linear} from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
-import { ShowTitle } from './Components/ShowTitle';
-import { MainTableau } from './Components/MainTableau';
-import { MainInfo } from './Components/MainInfo';
-import {EndSection} from './Components/EndSection'
-import { Introduction } from './Components/Introduction';
+import { ShowTitle } from './Components/ShowTitle/ShowTitle';
+import { MainTableau } from './Components/MainTableau/MainTableau';
+import { MainInfo } from './Components/MainInfo/MainInfo';
+import {EndSection} from './Components/EndSection/EndSection'
+import { Introduction } from './Components/Introduction/Introduction';
 import {createRandomNumber} from "../Repository/RepositoryFunction";
 
 gsap.registerPlugin(ScrollTrigger);

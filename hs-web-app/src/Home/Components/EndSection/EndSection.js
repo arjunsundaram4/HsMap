@@ -1,5 +1,5 @@
 import React, {useEffect,} from 'react';
-import '../Home.css';
+import './EndSection.css';
 import {gsap} from "gsap";
 export const EndSection=()=>{
     useEffect(()=>{

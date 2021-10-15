@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Home.css';
+import './showSubTitle.css';
 export const showSubTitle=()=>{
     var count=0;
     let mainTitle="Exploring COVID-19 Cases Around the World";

@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState,lazy,Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Home from "../Home/Home";
-import About from "../About/About";
-import MapTableau from "../MapTableau/MapTableau";
-import MapGDS from "../MapGDS/MapGDS";
-import Modeling from "../Modeling/Modeling";
-import Team from "../Team/Team";
-import { NavBar } from '../NavBar/NavBar';
+
+import { NavBar } from '../Navbar/Navbar';
+const Home = lazy(() => import("../Home/Home"));
+const About = lazy(() => import("../About/About"));
+const MapTableau = lazy(() => import("../MapTableau/MapTableau"));
+const MapGDS = lazy(() => import("../MapGDS/MapGDS"));
+const Modeling = lazy(() => import("../Modeling/Modeling"));
+const Team = lazy(() => import("../Team/Team"));
 
 const sites = [
   {
@@ -41,6 +42,7 @@ function SiteRouter() {
   const [navIndex, setNavIndex] = useState(currentSiteIndex);
   return (
     <Router>
+      <Suspense fallback={<div>Loading...</div>}>  
       <NavBar navItems={sites} onItemClick={setNavIndex} selectedIndex={navIndex}/>
       <Switch>
         <Route exact path="/about">
@@ -62,6 +64,7 @@ function SiteRouter() {
           <Home />
         </Route>
       </Switch>
+      </Suspense>
     </Router>
   );
 }
