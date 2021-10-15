@@ -3,7 +3,7 @@ import './Modeling.css';
 import {FourierBasedAnalysis} from './Components/FourierBasedAnalysis/FourierBasedAnalysis'
 import {CompartmentalNetworkModel} from './Components/CompartmentalNetworkModel/CompartmentalNetworkModel'
 import {InteractiveModel} from './Components/InteractiveModel/InteractiveModel'
-import { Tabs } from './Components/Tabs/Tabs';
+import { Tabs } from '../Components/Tabs/Tabs';
 import { Bar } from '../Components/Bar/Bar';
 
 class Modeling extends Component{
