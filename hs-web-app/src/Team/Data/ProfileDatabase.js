@@ -1,12 +1,4 @@
-export const ProfRayInfo={
-  name: 'Ray Simar',
-  avatar: '/assets/ray-simar.jpeg',
-  title: 'Professor in the Practice',
-  organization: 'Department of ECE at Rice University',
-  roles: ['Project Inspiration', 'Project Advisor', 'Fourier-based Analysis'],
-  link: 'https://profiles.rice.edu/faculty/ray-simar',
-}
-export const profiles2020 = [
+export const fall2020SemesterProfileList = [
   {
     name: 'I-No Liao',
     avatar: '/assets/ino-liao.jpeg',
@@ -104,7 +96,7 @@ export const profiles2020 = [
     link: '',
   },
 ];
-export const profiles2021 = [
+export const spring2021SemesterProfileList = [
   {
     name: 'I-No Liao',
     avatar: '/assets/ino-liao.jpeg',

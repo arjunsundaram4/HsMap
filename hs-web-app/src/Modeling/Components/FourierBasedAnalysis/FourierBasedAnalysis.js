@@ -1,16 +1,17 @@
 import React, {Component} from 'react';
-import TableauDashboard from '../../TableauDashboard/TableauDashboard';
+import TableauDashboard from '../../../TableauDashboard/TableauDashboard';
+import './FourierBasedAnalysis.css'
 
 const TABLEAU_FFT_SAMPLE_URL = 'https://public.tableau.com/views/FFT_sample/1'
 const TABLEAU_FFT_ANALYSIS_URL = 'https://public.tableau.com/views/seven_day_filtering_zero_padding_8KFFT/1';
 const TABLEAU_SUN_DECLINATION_URL = 'https://public.tableau.com/views/SunDeclinationoverayear/1_1'
 const TABLEAU_OPTIONS = { device: "desktop" };
 
-class FourierBasedAnalysis extends Component{
+export class FourierBasedAnalysis extends Component{
   render() {
       return (
-          <div className={"fourierDiv"}>
-              <div className={"sunDeclination"}>
+          <div className={"modelContent"}>
+              <div>
                   <h2 className={"title"}>Sun Declination</h2>
                   <p>Hope-Simpson hypothesized a relationship between the declination of the Sun on the rise and fall of influenza cases. In our Fourier-based analysis, our goal is to investigate any appearance of the influence of Sun declination on reported cases of COVID-19.</p>
                   <p>The following formula is the declination of Sun over a year, where N is the day of the year beginning with N=0 at midnight Universal Time (UT) as January 1 begins. The error of the formula is less than +/- 0.2 degrees.</p>
@@ -64,5 +65,3 @@ class FourierBasedAnalysis extends Component{
       );
   }
 }
-
-export default FourierBasedAnalysis;
