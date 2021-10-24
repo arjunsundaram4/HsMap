@@ -1,0 +1,11 @@
+.regionImage img{
+    width:100%;
+    object-fit: contain;
+    height:400px;
+}
+
+.regionText{
+    margin-top:20px;
+    display:flex;
+    justify-content: center;
+}

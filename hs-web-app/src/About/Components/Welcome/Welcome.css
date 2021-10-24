@@ -1,0 +1,57 @@
+.welcomeImages{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.welcomeImages img{
+    width:100px;
+    height: 100px;
+    object-fit: contain;
+}
+.welcomeImages > div{
+    width:220px;
+    height:220px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border-radius: 50%;
+    padding: 10px;
+    border: 2px solid white;
+    transition: all 0.2s ease-in-out;
+    font-weight: bold;
+}
+.welcomeImages > div:nth-child(1){
+    background-color: #655A7C;
+    border: 2px solid #655A7C;
+}
+.welcomeImages > div:nth-child(2){
+    background-color: #AB92BF;
+    border: 2px solid #AB92BF;
+}
+.welcomeImages > div:nth-child(3){
+    background-color: #AFC1D6;
+    border: 2px solid #AFC1D6;
+}
+.welcomeImages > div:nth-child(4){
+    background-color: #CAD49D;
+    border: 2px solid #CAD49D;
+}
+.welcomeImages > div:nth-child(5){
+    background-color: #33658A;
+    border: 2px solid #33658A;
+}
+.welcomeImages > div:nth-child(6){
+    background-color: #D6CA98;
+    border: 2px solid #D6CA98;
+}
+.welcomeImages > div:hover{
+    background-color: transparent;
+}
+
+.myLine{
+    background-color:white;
+    height:2px;
+    margin: 20px 0;
+}
