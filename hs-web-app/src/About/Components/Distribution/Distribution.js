@@ -1,7 +1,31 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./Distribution.css";
+import {gsap} from "gsap";
 
 export const Distribution=()=>{
+    useEffect(()=> {
+        gsap.from('.distributeTitle', {
+            opacity: 0, y: -100, duration: 1, scrollTrigger: {
+                trigger: '.distributeTitle',
+                start: "top 80%"
+            }
+        });
+        gsap.from('.distributeInnerText', {
+            opacity: 0, x: -100, duration: 1, scrollTrigger: {
+                trigger: '.distributeInnerText',
+                start: "top 80%"
+            }
+        });
+        gsap.from('.tiltEarthImage',{opacity:0,y:100,duration:1,scrollTrigger:{
+                trigger:'.tiltEarthImage',
+                start: "top 80%"
+            }});
+        gsap.from('.distributeContent .latitudeImage',{opacity:0,x:400,duration:1,rotation: 180,scrollTrigger:{
+                trigger:'.distributeContent .latitudeImage',
+                start: "top 80%"
+            }});
+    });
+
     return (
         <div>
             <div className={"slidesInnerDiv"}>

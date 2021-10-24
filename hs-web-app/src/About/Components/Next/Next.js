@@ -1,6 +1,26 @@
-import React from "react";
+import React, {useEffect} from "react";
+import {gsap} from "gsap";
 
 export const Next=()=>{
+    useEffect(()=>{
+        gsap.from('nextTitle',{opacity:0,y:100,duration:1,scrollTrigger:{
+                trigger:'nextTitle',
+                start: "center 90%"
+            }});
+        gsap.from('.nextImage .initialItalyImage',{opacity:0,x:-100,duration:1,scrollTrigger:{
+                trigger:'.nextImage .initialItalyImage',
+                start: "center 90%"
+            }});
+        gsap.from('.nextText',{opacity:0,x:100,duration:1,scrollTrigger:{
+                trigger:'.nextText',
+                start: "center 90%"
+            }});
+        gsap.from('.nextImage .initialVictoriaImage',{opacity:0,y:-100,duration:1,scrollTrigger:{
+                trigger:'.nextImage .initialVictoriaImage',
+                start: "center 90%"
+            }});
+    })
+
     return (
         <div>
             <div className={"slidesInnerDiv"}>

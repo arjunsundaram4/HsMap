@@ -1,7 +1,41 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./Phase.css";
+import {gsap} from "gsap";
 
 export const Phase=()=>{
+    useEffect(()=> {
+        gsap.from('.phaseTitle', {
+            opacity: 0, y: 100, duration: 1, scrollTrigger: {
+                trigger: '.phaseTitle',
+                start: "center 80%"
+            }
+        });
+        gsap.from('.phaseText', {
+            opacity: 0, x: 100, y: 100, duration: 1, scrollTrigger: {
+                trigger: '.phaseText',
+                start: "center 80%"
+            }
+        });
+        gsap.from('.phaseCompareImageDiv', {
+            opacity: 0, x: -100, duration: 1, scrollTrigger: {
+                trigger: '.phaseCompareImageDiv',
+                start: "center 80%"
+            }
+        });
+        gsap.from('.phaseFloridaImage', {
+            opacity: 0, y: -100, duration: 1, scrollTrigger: {
+                trigger: '.phaseFloridaImage',
+                start: "center 80%"
+            }
+        });
+        gsap.from('.phaseEgyptImage', {
+            opacity: 0, y: 100, duration: 1, scrollTrigger: {
+                trigger: '.phaseEgyptImage',
+                start: "center 80%"
+            }
+        });
+    });
+
     return (
         <div>
             <div className={"slidesInnerDiv"}>

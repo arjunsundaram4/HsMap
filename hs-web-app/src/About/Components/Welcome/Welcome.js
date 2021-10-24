@@ -1,7 +1,21 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./Welcome.css";
+import {gsap, Power3} from "gsap";
 
 export const Welcome=()=>{
+    let t1=new  gsap.timeline({delay: 0.3});
+    useEffect(()=> {
+        //t1.from('.mainTitle',{y:15,opacity:0,ease: Power3.easeIn,delay:0.1},'Start');
+        t1.from('.welcomeImages1', {opacity: 0, x: -100, duration: 1, ease: Power3.easeIn, delay: 0.1}, 'Start');
+        t1.from('.welcomeImages2', {opacity: 0, x: -100, duration: 1, ease: Power3.easeIn, delay: 0.1}, 'Start');
+        t1.from('.welcomeImages3', {opacity: 0, x: -100, duration: 1, ease: Power3.easeIn, delay: 0.1}, 'Start');
+        t1.from('.welcomeImages4', {opacity: 0, x: 100, duration: 1, ease: Power3.easeIn, delay: 0.1}, 'Start');
+        t1.from('.welcomeImages5', {opacity: 0, x: 100, duration: 1, ease: Power3.easeIn, delay: 0.1}, 'Start');
+        t1.from('.welcomeImages6', {opacity: 0, x: 100, duration: 1, ease: Power3.easeIn, delay: 0.1}, 'Start');
+        gsap.from('.welcomeText', {opacity: 0, y: 100, duration: 1});
+        gsap.from('.welcomeTitle', {opacity: 0, y: 100, duration: 1});
+    });
+
     return (
         <div>
             <div className={"slidesInnerDiv"}>

@@ -1,7 +1,26 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./Database.css";
+import {gsap} from "gsap";
 
 export const Database=()=>{
+    useEffect(()=> {
+        gsap.from('.databaseTitle', {
+            opacity: 0, y: 100, duration: 1, scrollTrigger: {
+                trigger: '.databaseTitle',
+                start: "center 80%"
+            }
+        });
+
+        gsap.from('.databaseText', {
+            opacity: 0, x: 100, duration: 1, scrollTrigger: {
+                trigger: '.databaseText',
+                start: "center 80%"
+            }
+        });
+        //let t1=new  gsap.timeline({delay: 0.3});
+        //t1.staggerFrom('.databaseText',1,{y:30,ease: Power3.easeOut,opacity:0},0.35);
+    });
+
     return (
         <div>
             <div className={"slidesInnerDiv"}>

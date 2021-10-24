@@ -1,7 +1,35 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./Work.css";
+import {gsap} from "gsap";
 
 export const Work=()=>{
+    useEffect(()=> {
+        gsap.from('.workTitle', {
+            opacity: 0, y: -100, duration: 1, scrollTrigger: {
+                trigger: '.workTitle',
+                start: "center 80%"
+            }
+        });
+        gsap.from('.workText', {
+            opacity: 0, x: -100, duration: 1, scrollTrigger: {
+                trigger: '.workText',
+                start: "center 80%"
+            }
+        });
+        gsap.from('.workGithubImage', {
+            opacity: 0, x: 100, duration: 1, scrollTrigger: {
+                trigger: '.workGithubImage',
+                start: "center 80%"
+            }
+        });
+        gsap.from('.workImages', {
+            opacity: 0, y: 100, duration: 1, scrollTrigger: {
+                trigger: '.workImages',
+                start: "center 90%"
+            }
+        });
+    });
+
     return (
         <div>
             <div className={"slidesInnerDiv"}>

@@ -1,6 +1,29 @@
-import React from "react";
+import React, {useEffect} from "react";
+import {gsap} from "gsap";
 
 export const Proposal=()=>{
+    useEffect(()=> {
+        gsap.from('.proposalTitle', {
+            opacity: 0, y: 100, duration: 1, scrollTrigger: {
+                trigger: '.proposalTitle',
+                start: "top 80%"
+            }
+        });
+        gsap.from('.proposalText', {
+            opacity: 0, x: 100, duration: 1, scrollTrigger: {
+                trigger: '.proposalText',
+                start: "top 80%"
+            }
+        });
+
+        gsap.from('.proposalContent .latitudeImage', {
+            opacity: 0, x: -100, duration: 1, scrollTrigger: {
+                trigger: '.proposalContent .latitudeImage',
+                start: "center 80%"
+            }
+        });
+    });
+
     return (
         <div>
             <div className={"slidesInnerDiv"}>

@@ -1,7 +1,31 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./Region.css";
+import {gsap} from "gsap";
 
 export const Region=()=>{
+    useEffect(()=> {
+        gsap.from('.regionTitle', {
+            opacity: 0, y: 100, duration: 1, scrollTrigger: {
+                trigger: '.regionTitle',
+                start: "center 80%"
+            }
+        });
+
+        gsap.from('.regionImage', {
+            opacity: 0, x: 100, y: -100, duration: 1, scrollTrigger: {
+                trigger: '.regionImage',
+                start: "center 80%"
+            }
+        });
+
+        gsap.from('.regionText', {
+            opacity: 0, x: -100, y: 100, duration: 1, scrollTrigger: {
+                trigger: '.regionText',
+                start: "center 90%"
+            }
+        });
+    });
+
     return (
         <div>
             <div className={"slidesInnerDiv"}>

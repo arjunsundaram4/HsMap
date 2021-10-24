@@ -1,6 +1,28 @@
-import React from "react";
+import React, {useEffect} from "react";
+import {gsap} from "gsap";
 
 export const SeasonOutBreak=()=>{
+    useEffect(()=> {
+        gsap.from('.seasonTitle', {
+            opacity: 0, y: 100, duration: 1, scrollTrigger: {
+                trigger: '.seasonTitle',
+                start: "center 80%"
+            }
+        });
+        gsap.from('.seasonText', {
+            opacity: 0, x: 100, duration: 1, scrollTrigger: {
+                trigger: '.seasonText',
+                start: "center 80%"
+            }
+        });
+        gsap.from('.seasonContent .latitudeImage', {
+            opacity: 0, x: -100, duration: 1, scrollTrigger: {
+                trigger: '.seasonContent .latitudeImage',
+                start: "center 80%"
+            }
+        });
+    });
+
     return (
         <div>
             <div className={"slidesInnerDiv"}>

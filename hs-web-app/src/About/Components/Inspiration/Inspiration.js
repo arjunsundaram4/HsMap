@@ -1,6 +1,28 @@
-import React from "react";
+import React, {useEffect} from "react";
+import {gsap} from "gsap";
 
 export const Inspiration=()=>{
+    useEffect(()=> {
+        gsap.from('.bookCoverImage', {
+            opacity: 0, x: -100, duration: 1, scrollTrigger: {
+                trigger: '.bookCoverImage',
+                start: "top 80%"
+            }
+        });
+        gsap.from('.inspirationText', {
+            opacity: 0, x: 100, duration: 1, scrollTrigger: {
+                trigger: '.inspirationText',
+                start: "top 80%"
+            }
+        });
+        gsap.from('.inspirationTitle', {
+            opacity: 0, y: 100, duration: 1, scrollTrigger: {
+                trigger: '.inspirationTitle',
+                start: "top 80%"
+            }
+        });
+    });
+
     return (
         <div>
             <div className={"slidesInnerDiv"}>

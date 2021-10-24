@@ -1,7 +1,29 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./Hypothesis.css";
+import {gsap} from "gsap";
 
 export const Hypothesis=()=>{
+    useEffect(()=> {
+        gsap.from('.hypothesisTitle', {
+            opacity: 0, y: 100, duration: 1, scrollTrigger: {
+                trigger: '.hypothesisTitle',
+                start: "center 80%"
+            }
+        });
+        gsap.from('.hypothesisText', {
+            opacity: 0, x: 100, duration: 1, scrollTrigger: {
+                trigger: '.hypothesisText',
+                start: "center 80%"
+            }
+        });
+        gsap.from('.hypothesisImage', {
+            opacity: 0, x: -100, duration: 1, scrollTrigger: {
+                trigger: '.hypothesisImage',
+                start: "center 80%"
+            }
+        });
+    });
+
     return (
         <div>
             <div className={"slidesInnerDiv"}>
