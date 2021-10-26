@@ -1,12 +1,3 @@
-/*
-.each-slide > div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
-  height: 625px;
-}
-*/
 .mainTitle{
   font-size: 40px;
   font-weight: bold;
@@ -162,13 +153,7 @@
 .initialImages>div:nth-child(2n){
   text-align: right;
 }
-/*
-.phaseImage>div:nth-child(n){
-  text-align: right;
-}
-.phaseImage>div:nth-child(2n){
-  text-align: left;
-}*/
+
 .nextImage{
   text-align: center;
 }

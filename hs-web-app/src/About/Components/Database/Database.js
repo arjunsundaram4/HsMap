@@ -17,8 +17,6 @@ export const Database=()=>{
                 start: "center 80%"
             }
         });
-        //let t1=new  gsap.timeline({delay: 0.3});
-        //t1.staggerFrom('.databaseText',1,{y:30,ease: Power3.easeOut,opacity:0},0.35);
     });
 
     return (
