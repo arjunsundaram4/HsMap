@@ -1,3 +1,25 @@
 .distributeText{
     margin-right:10px;
 }
+
+.distributeContent {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tiltEarthImage{
+    width:75%;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+@media only screen and (max-width: 900px) {
+    .distributeContent {
+        flex-direction: column-reverse;
+    }
+
+    .tiltEarthImage{
+        width:100%;
+    }
+}

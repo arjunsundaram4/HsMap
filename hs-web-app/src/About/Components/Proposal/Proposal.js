@@ -1,5 +1,6 @@
 import React, {useEffect} from "react";
 import {gsap} from "gsap";
+import "./Proposal.css";
 
 export const Proposal=()=>{
     useEffect(()=> {

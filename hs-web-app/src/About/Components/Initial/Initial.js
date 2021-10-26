@@ -1,5 +1,6 @@
 import React, {useEffect} from "react";
 import {gsap} from "gsap";
+import "./Initial.css";
 
 export const Initial=()=>{
     useEffect(()=> {

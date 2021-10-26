@@ -1,5 +1,6 @@
 import React, {useEffect} from "react";
 import {gsap} from "gsap";
+import "./SeasonOutBreak.css";
 
 export const SeasonOutBreak=()=>{
     useEffect(()=> {

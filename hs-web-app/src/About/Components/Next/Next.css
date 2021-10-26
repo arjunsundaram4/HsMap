@@ -1,0 +1,21 @@
+.nextImage{
+    text-align: center;
+}
+.nextImage img{
+    width: 40%;
+}
+.nextImage img:not(:first-child){
+    margin-left: 10px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .nextImage img{
+        width:45%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .nextImage img{
+        width:60%;
+    }
+}

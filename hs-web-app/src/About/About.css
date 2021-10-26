@@ -38,205 +38,26 @@
   text-decoration: underline;
 }
 
-.inspirationDiv{
-  display:flex;
-}
-.inspirationText{
-  display:flex;
-  justify-content: center;
-  align-items: center;
-}
-.distributeContent,.proposalContent,.seasonContent{
-  display:flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .latitudeImage{
   width:30%;
   object-fit: contain;
 }
-.tiltEarthImage{
-  width:75%;
-  margin: 0 auto;
-  object-fit: contain;
-}
-.seasonText>div{
-  margin: 10px;
-  padding: 10px;
 
-  border-radius: 5px;
-  background-color:#011627;
-  position: relative;
-
-}
-.seasonText>div::after{
-  --borderSize:1px;
-  content: '';
-  position: absolute;
-  top: calc(-1 * var(--borderSize));
-  left: calc(-1 * var(--borderSize));
-  height: calc(100% + var(--borderSize) * 2);
-  width: calc(100% + var(--borderSize) * 2);
-  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
-  animation: animatedgradient 1s ease alternate infinite;
-  background-size: 300% 300%;
-  z-index: -1;
-}
-@keyframes animatedgradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.bookCoverImage{
-  width:30%;
-  object-fit: contain;
-}
-.workContent{
-  position: relative;
-  display:flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.workImages{
-  display:flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-.workImages img{
-  object-fit: contain;
-}
-.workGithubImage{
-  width:35%;
-}
-
-.hypothesisText{
-  text-align: center;
-  margin: 10px;
-}
-.hypothesisText span{
-  background-color: #CAE5FF;
-  color:black;
-  padding:5px;
-  border-radius: 5px;
-}
-
-.initialContent,.phaseContent{
-  display:flex;
-  justify-content: center;
-  align-items: center;
-}
-.initialImages,.phaseImage{
-  width:30%;
-}
-.phaseImage{
-  margin-left: 20px;
-}
-.initialImages img, .phaseImage img{
-  width:90%;
-  height:300px;
-  object-fit: contain;
-  margin: 0 auto;
-}
-
-.initialImages>div:nth-child(n){
-  text-align: left;
-}
-.initialImages>div:nth-child(2n){
-  text-align: right;
-}
-
-.nextImage{
-  text-align: center;
-}
-.nextImage img{
-  width: 40%;
-}
-.nextImage img:not(:first-child){
-  margin-left: 10px;
-}
-@keyframes clickMe{
-  0% { background-position: 0% 0%; }
-  100% { background-position: 0% 100%; }
-}
-@media only screen and (max-width: 1500px) {
-  .initialContent{
-    flex-direction: column;
-  }
-  .initialImages{
-    width:100%;
-    display:flex;
-    justify-content: center;
-  }
-  .initialImages img{
-    width:100%;
-    height:250px;
-  }
-  .initialImages>div{
-    text-align: center;
-    margin: 10px;
-  }
-
-  .phaseContent{
-    flex-direction: column-reverse;
-  }
-  .initialImages,.phaseImage{
-    display:flex;
-    width:100%;
-    justify-content: center;
-  }
-}
 @media only screen and (max-width: 1200px) {
   .slidesInnerDiv{
     width:90%
   }
-  .workImages img{
-    width: 30%;
-  }
-
-  .nextImage img{
-    width:45%;
-  }
-
-  .workContent{
-    flex-direction: column;
-  }
-  .workGithubImage{
-    width:70%;
-  }
 }
+
 @media only screen and (max-width: 900px) {
-  .inspirationDiv,.proposalContent,.seasonContent{
-    flex-direction: column;
-  }
-  .distributeContent{
-    flex-direction: column-reverse;
-  }
-  .bookCoverImage,.latitudeImage{
+  .latitudeImage{
     width:100%;
     height:250px;
   }
+
   .latitudeImage{
     width:100%;
     height:500px;
     margin: 10px 0;
   }
-  .inspirationText{
-    margin-top: 20px;
-  }
-  .tiltEarthImage{
-    width:100%;
-  }
-  .nextImage img{
-    width:60%;
-  }
-
 }

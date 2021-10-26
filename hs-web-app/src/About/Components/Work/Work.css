@@ -1,3 +1,36 @@
 .workText{
     flex:1;
 }
+
+.workContent{
+    position: relative;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.workImages{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.workImages img{
+    object-fit: contain;
+}
+.workGithubImage{
+    width:35%;
+}
+
+@media only screen and (max-width: 1200px) {
+    .workImages img{
+        width: 30%;
+    }
+
+    .workContent{
+        flex-direction: column;
+    }
+
+    .workGithubImage{
+        width:70%;
+    }
+}

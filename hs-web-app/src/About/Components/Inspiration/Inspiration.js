@@ -1,5 +1,6 @@
 import React, {useEffect} from "react";
 import {gsap} from "gsap";
+import "./Inspiration.css";
 
 export const Inspiration=()=>{
     useEffect(()=> {
