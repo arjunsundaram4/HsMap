@@ -12,10 +12,7 @@
   padding: 10px 0;
   overflow:hidden
 }
-.slidesInnerDiv{
-  width:80%;
-  margin:0 auto;
-}
+
 .slides>div{
   min-height: 400px;
   color:black;
@@ -28,25 +25,10 @@
   background-color:#011627;
   color:white;
 }
-.slidesInnerDiv{
-  font-size: 16px;
-}
-.slidesInnerDiv .title{
-  font-size: 34px;
-  margin: 10px 0;
-  font-weight: bold;
-  text-decoration: underline;
-}
 
 .latitudeImage{
   width:30%;
   object-fit: contain;
-}
-
-@media only screen and (max-width: 1200px) {
-  .slidesInnerDiv{
-    width:90%
-  }
 }
 
 @media only screen and (max-width: 900px) {

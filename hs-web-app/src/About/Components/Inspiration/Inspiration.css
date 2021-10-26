@@ -1,3 +1,16 @@
+.slidesInnerDiv{
+    width:80%;
+    margin:0 auto;
+    font-size: 16px;
+}
+
+.slidesInnerDiv .title{
+    font-size: 34px;
+    margin: 10px 0;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 .inspirationDiv{
     display:flex;
 }
@@ -11,6 +24,12 @@
 .bookCoverImage{
     width:30%;
     object-fit: contain;
+}
+
+@media only screen and (max-width: 1200px) {
+    .slidesInnerDiv{
+        width:90%
+    }
 }
 
 @media only screen and (max-width: 900px) {
