@@ -1,6 +1,6 @@
 import React from 'react';
 import './MapGDS.css';
-import { GDS_DATA } from './Components/GDS_DATA/GDS_DATA';
+import { GdsData } from './Components/GdsData/GdsData.js';
 
 
 class MapGDS extends React.Component{
@@ -33,14 +33,14 @@ class MapGDS extends React.Component{
       <div className="bodyMarginTop">
       <div className={"customTab"}>
           {
-          GDS_DATA.map((data, idx) => {
+          GdsData.map((data, idx) => {
               return <div className={(idx==this.state.view)?"tabPressed":"tabUnPressed"} onClick={(e)=>{this.pressTab(idx)}}><span>{data.title}</span></div>
           })
           }
       </div>
       <div className={"iframeTab"}>
           {
-          GDS_DATA.map((data,index)=>{
+          GdsData.map((data,index)=>{
               if(data.subTab){
               return (
                   <div style={this.state.view==index?showClass:hideClass}>
