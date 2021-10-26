@@ -11,6 +11,11 @@
     text-decoration: underline;
 }
 
+.latitudeImage{
+    width:30%;
+    object-fit: contain;
+}
+
 .proposalContent {
     display:flex;
     align-items: center;
@@ -24,6 +29,12 @@
 }
 
 @media only screen and (max-width: 900px) {
+    .latitudeImage{
+        width:100%;
+        height:500px;
+        margin: 10px 0;
+    }
+
     .proposalContent {
         flex-direction: column;
     }
