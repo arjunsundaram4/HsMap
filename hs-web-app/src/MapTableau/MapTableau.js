@@ -10,12 +10,6 @@ function MapTableau () {
         changeView(index);
     }
 
-    const showClass={
-        display:'initial'
-    }
-    const hideClass={
-        display:'none'
-    }
   return (
       <div className={"bodyMarginTop"}>
           <div className={"customTab"}>
