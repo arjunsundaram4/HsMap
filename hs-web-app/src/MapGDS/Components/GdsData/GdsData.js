@@ -3,12 +3,12 @@ import React from "react";
 export const GdsData = [
   {
     title: "Overview",
-    url: "https://datastudio.google.com/embed/reporting/e70cf709-d828-44b7-a1d8-8023088dff5d/page/TxgjB",
+    url: process.env.REACT_APP_OVERVIEW,
     subTab: false,
   },
   {
     title: "Four Zones Concept",
-    url: "https://datastudio.google.com/embed/reporting/e70cf709-d828-44b7-a1d8-8023088dff5d/page/cm8pB",
+    url: process.env.REACT_APP_FOUR_ZONES,
     subTab: false,
   },
   {
@@ -18,15 +18,15 @@ export const GdsData = [
     subTabInfo: [
       {
         title: "Four Zones",
-        url: "https://datastudio.google.com/embed/reporting/e70cf709-d828-44b7-a1d8-8023088dff5d/page/dF9pB",
+        url: process.env.REACT_APP_GDS_FOUR_ZONES,
       },
       {
         title: "Overlap",
-        url: "https://datastudio.google.com/embed/reporting/e70cf709-d828-44b7-a1d8-8023088dff5d/page/sh18B",
+        url: process.env.REACT_APP_OVERLAP,
       },
       {
         title: "Side by side",
-        url: "https://datastudio.google.com/embed/reporting/e70cf709-d828-44b7-a1d8-8023088dff5d/page/uJ18B",
+        url: process.env.REACT_APP_SIDE_BY_SIDE,
       },
     ],
   },

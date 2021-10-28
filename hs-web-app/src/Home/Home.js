@@ -17,7 +17,7 @@ const TABLEAU_OPTIONS = { device: ["desktop", "phone"] };
 function Home() {
     
 
-
+    
     let mainTitle="Exploring COVID-19 Cases Around the World";
     let mainSubTitle="Modern Tools Applied to a 90’s Concept";
     let introTitle="Introduction";
