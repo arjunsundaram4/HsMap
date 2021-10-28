@@ -1,0 +1,16 @@
+.hypothesisImage{
+    width:100%;
+    height:450px;
+    object-fit: contain;
+}
+
+.hypothesisText{
+    text-align: center;
+    margin: 10px;
+}
+.hypothesisText span{
+    background-color: #CAE5FF;
+    color:black;
+    padding:5px;
+    border-radius: 5px;
+}
