@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import TableauDashboard from '../../../TableauDashboard/TableauDashboard';
 import './FourierBasedAnalysis.css'
 
-const TABLEAU_FFT_SAMPLE_URL = 'https://public.tableau.com/views/FFT_sample/1'
-const TABLEAU_FFT_ANALYSIS_URL = 'https://public.tableau.com/views/seven_day_filtering_zero_padding_8KFFT/1';
-const TABLEAU_SUN_DECLINATION_URL = 'https://public.tableau.com/views/SunDeclinationoverayear/1_1'
+// const TABLEAU_FFT_SAMPLE_URL = 'https://public.tableau.com/views/FFT_sample/1'
+// const TABLEAU_FFT_ANALYSIS_URL = 'https://public.tableau.com/views/seven_day_filtering_zero_padding_8KFFT/1';
+// const TABLEAU_SUN_DECLINATION_URL = 'https://public.tableau.com/views/SunDeclinationoverayear/1_1'
 const TABLEAU_OPTIONS = { device: "desktop" };
 
 export class FourierBasedAnalysis extends Component{
@@ -19,7 +19,7 @@ export class FourierBasedAnalysis extends Component{
                   <p>The declination has a period of 365 days which is a frequency of 1/365 cycles/day (about 0.0027 cycles/day). And that is the peak of the spectrum.</p>
                   <div style = {{height:400}}>
                       <TableauDashboard
-                          url={ TABLEAU_SUN_DECLINATION_URL }
+                          url={ process.env.REACT_APP_TABLEAU_SUN_DECLINATION_URL }
                           options={ TABLEAU_OPTIONS }
                       />
                   </div>
@@ -42,7 +42,7 @@ export class FourierBasedAnalysis extends Component{
               <p>Looking at the Fourier-based analysis of Italy reported cases (here we show the reported daily cases, the seven-day moving average of the cases, and the DFT of these cases) we are beginning to see some interesting components whose frequencies are near or near multiples of the Sun’s declination frequency. </p>
               <div style = {{height:500}}>
                   <TableauDashboard
-                      url={ TABLEAU_FFT_SAMPLE_URL }
+                      url={ process.env.REACT_APP_TABLEAU_FFT_SAMPLE_URL }
                       options={ TABLEAU_OPTIONS }
                   />
               </div>
@@ -57,7 +57,7 @@ export class FourierBasedAnalysis extends Component{
               <p >The next few graphs overlay regions from the same latitude region.  We can see some similarity between the DFT of these cases and harmonics that are similar to the Italy cases described above.</p>
               <div style = {{height:1100}}>
                   <TableauDashboard
-                      url={ TABLEAU_FFT_ANALYSIS_URL }
+                      url={ process.env.REACT_APP_TABLEAU_FFT_ANALYSIS_URL }
                       options={ TABLEAU_OPTIONS }
                   />
               </div>
