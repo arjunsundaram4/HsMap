@@ -3,7 +3,7 @@ import TableauDashboard from '../../../TableauDashboard/TableauDashboard';
 import './FourierBasedAnalysis.css'
 
 // const TABLEAU_FFT_SAMPLE_URL = 'https://public.tableau.com/views/FFT_sample/1'
-// const TABLEAU_FFT_ANALYSIS_URL = 'https://public.tableau.com/views/seven_day_filtering_zero_padding_8KFFT/1';
+// const TABLEAU_FFT_ANALYSIS_URL = 'https://public.tableau.com/views/seven_day_filtering_zero_padding_8KFFT/1'
 // const TABLEAU_SUN_DECLINATION_URL = 'https://public.tableau.com/views/SunDeclinationoverayear/1_1'
 const TABLEAU_OPTIONS = { device: "desktop" };
 
