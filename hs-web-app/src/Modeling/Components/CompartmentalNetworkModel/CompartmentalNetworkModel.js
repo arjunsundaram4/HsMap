@@ -38,7 +38,7 @@ export class CompartmentalNetworkModel extends Component{
 
 				<p>
 					Source: &nbsp;
-					<a href="http://storage.googleapis.com/covid-external/COVID-19ForecastWhitePaper.pdf">
+					<a> url:{process.env.REACT_APP_MODELING_COMPNET}
 						Arik, Sercan, et al. "Interpretable Sequence Learning for COVID-19 Forecasting." <em>Advances in Neural Information Processing Systems 33</em> (2020).
 					</a>
 				</p>
