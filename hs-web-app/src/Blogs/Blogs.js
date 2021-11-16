@@ -1,6 +1,8 @@
-import React, { Component } from "react";
+import React, { Component,useMemo } from "react";
 import "./Blogs.css";
 import { useState, useEffect } from "react";
+import Pagination from "../Components/Pagination/Pagination"
+import {paginate} from "../Components/Pagination/usePagination"
 const query = `{
   pageCollection {
     items {
@@ -16,7 +18,19 @@ const query = `{
 `;
 function Blog() {
   const [page, setPage] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const pageSize = 10;
 
+  const handlePageChange = page => {
+    setCurrentPage(page);
+  }
+
+  const getPageData = () => {
+
+    const paginationData = paginate(page, currentPage, pageSize);
+    return { totalCount: page.length, data: paginationData }
+  }
+  
   useEffect(() => {
     window
       .fetch(process.env.REACT_APP_CONTENFULSPACE, {
@@ -37,20 +51,23 @@ function Blog() {
 
         // rerender the entire component with new data
         setPage(data.pageCollection.items);
+        
       });
   }, []);
   console.log(page);
   if (!page) {
     return "Loading...";
   }
+  const { totalCount, data } = getPageData();
   return (
+    <>
     <div className={"bodyMarginTop bodyMarginBottom"}>
       <div className={"modelContent"}>
         <div className="text-center mainTitle">
           Blog Posts from Professor and Team
         </div>
         <div className={"slides"}>
-          {page.map((pages) => (
+          {data?.map((pages) => (
             <div>
             <header className="App-header">
               <h4 className={"title"}>{pages.title}</h4>
@@ -77,7 +94,14 @@ function Blog() {
           ))}
         </div>
       </div>
+      
     </div>
+            <Pagination
+            itemsCount={totalCount}
+            pageSize={pageSize}
+            currentPage={currentPage}
+            onPageChange={handlePageChange} />
+            </>
   );
 }
 

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./Faq.css";
 import { useState, useEffect } from "react";
+import Pagination from "../Components/Pagination/Pagination"
+import {paginate} from "../Components/Pagination/usePagination"
 const query = `{
   faqCollection {
     items {
@@ -13,7 +15,19 @@ const query = `{
 `;
 function Faq() {
   const [page, setPage] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const pageSize = 10;
 
+  const handlePageChange = page => {
+    setCurrentPage(page);
+  }
+
+  const getPageData = () => {
+
+    const paginationData = paginate(page, currentPage, pageSize);
+    return { totalCount: page.length, data: paginationData }
+  }
+  
   useEffect(() => {
     window
       .fetch(process.env.REACT_APP_CONTENFULSPACE, {
@@ -40,14 +54,16 @@ function Faq() {
   if (!page) {
     return "Loading...";
   }
+  const { totalCount, data } = getPageData();
   return (
+    <>
     <div className={"bodyMarginTop bodyMarginBottom"}>
       <div className={"modelContent"}>
         <div className="text-center mainTitle">
           Common FAQs from Professor and Team
         </div>
         <div className={"slides"}>
-          {page.map((faq) => (
+          {data.map((faq) => (
             <div>
             <header className="App-header">
               <h4 className={"title"}>{faq.questions}</h4>
@@ -61,6 +77,12 @@ function Faq() {
         </div>
       </div>
     </div>
+            <Pagination
+            itemsCount={totalCount}
+            pageSize={pageSize}
+            currentPage={currentPage}
+            onPageChange={handlePageChange} />
+            </>
   );
 }
 

@@ -1,14 +1,25 @@
-import './pagination.scss';
-export const usePagination = ({
-    totalCount,
-    pageSize,
-    siblingCount = 1,
-    currentPage
-  }) => {
-    const paginationRange = useMemo(() => {
-       // Our implementation logic will go here 
-        
-    }, [totalCount, pageSize, siblingCount, currentPage]);
-  
-    return paginationRange;
-  };
+import React from 'react';
+import _ from 'lodash';
+import './Pagination.css';
+
+const Pagination = (props) => {
+
+    const { itemsCount, pageSize, currentPage, onPageChange } = props;
+    const pageCount = Math.ceil(itemsCount / pageSize);
+    if (pageCount === 1) return null;
+    const pages = _.range(1, pageCount + 1);
+
+    return (
+        <div className="pagination">
+            {pages.map(page => (
+                <div href={null} key={page}
+                    onClick={() => onPageChange(page)}
+                    className={page === currentPage ? 'active' : 'page-item'}>
+                    {page}
+                </div>
+            ))}
+        </div>
+    )
+}
+
+export default Pagination;
