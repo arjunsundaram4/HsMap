@@ -9,6 +9,7 @@ const MapGDS = lazy(() => import("../MapGDS/MapGDS"));
 const Modeling = lazy(() => import("../Modeling/Modeling"));
 const Team = lazy(() => import("../Team/Team"));
 const Blog = lazy(() => import("../Blogs/Blogs"));
+const Faq = lazy(() => import("../FAQ/Faq"));
 const sites = [
   {
     name: "Home",
@@ -21,6 +22,10 @@ const sites = [
   {
     name: "Blogs",
     location: "/blogs",
+  },
+  {
+    name: "FAQs",
+    location: "/faq",
   },
   {
     name: "Tableau Map",
@@ -66,6 +71,9 @@ function SiteRouter() {
         </Route>
         <Route exact path="/team">
           <Team />
+        </Route>
+        <Route exact path="/faq">
+          <Faq />
         </Route>
         <Route path="/">
           <Home />

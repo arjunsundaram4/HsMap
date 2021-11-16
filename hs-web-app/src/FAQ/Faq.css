@@ -1,0 +1,23 @@
+.mainTitle{
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.modelContent{
+  width: 80%;
+  margin: 0 auto;
+}
+.modelContent a,.modelContent a{
+  color:#0F8B8D;
+}
+.title{
+  text-decoration: underline;
+  font-weight: bold;
+  margin-top: 50px;
+  margin-bottom: 25px;
+  font-size: 30px;
+}
+
+.bodyMarginBottom{
+  margin-bottom: 200px;
+}
