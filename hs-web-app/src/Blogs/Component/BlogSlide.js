@@ -31,7 +31,7 @@ export const BlogSlide = (props) => {
 
     return (
         <div className={`slide blogSlide${id}`}>
-            <h4>{data.title}</h4>
+            <div className={"slideTitle"}>{data.title}</div>
             <div className={"slideContentContainer"}>
                 <div>
                     {data.image && (
