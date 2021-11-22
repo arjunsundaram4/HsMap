@@ -67,7 +67,7 @@ function Blog() {
           <div className="text-center mainTitle">
             Blog Posts from Professor and Team
           </div>
-          <div className={"slides"}>
+          <div>
             {data?.map((pages, index) => (
               <BlogSlide data={pages} id={index} />
             ))}
