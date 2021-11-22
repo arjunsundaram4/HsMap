@@ -3,7 +3,7 @@ import "./Blogs.css";
 import { useState, useEffect } from "react";
 import Pagination from "../Components/Pagination/Pagination"
 import { paginate } from "../Components/Pagination/usePagination"
-import { BlogSlide } from "./Component/BlogSlide";
+import { BlogSlide } from "./Component/BlogSlide/BlogSlide";
 const query = `{
   pageCollection {
     items {
