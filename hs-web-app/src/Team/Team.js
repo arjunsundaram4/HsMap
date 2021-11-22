@@ -1,23 +1,76 @@
 import React from "react";
 import './Team.css';
-import {spring2021SemesterProfileList, fall2020SemesterProfileList} from "./Data/ProfileDatabase";
-import {RayProfile} from "./Components/RayProfile/RayProfile"
-import {TeamIntroduction} from "./Components/TeamIntroduction/TeamIntroduction"
-import {gsap} from "gsap";
-import {ScrollTrigger} from "gsap/ScrollTrigger";
-import {Semester} from './Components/Semester/Semester'
+import { RayProfile } from "./Components/RayProfile/RayProfile"
+import { TeamIntroduction } from "./Components/TeamIntroduction/TeamIntroduction"
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Semester } from './Components/Semester/Semester'
 gsap.registerPlugin(ScrollTrigger);
 
+const query = `{
+  teamCollection {
+    items{
+      name
+      avatar{
+        url
+      }
+      title
+      organization
+    	semester
+      otherInfo
+      link
+      position
+    }
+  }
+}
+`;
+
+
 function Team() {
-    const spring2021Semester="Members in 2021 Spring";
-    const fall2020Semester="Members in 2020 Fall";
-    
+
+  const [teamData, setTeamData] = React.useState([]);
+
+  const spring2021Key = "Spring_2021";
+  const fall2020Key = "Fall_2020";
+  const semesterMap = new Map();
+  semesterMap.set(spring2021Key, "Members in 2021 Spring");
+  semesterMap.set(fall2020Key, "Members in 2020 Fall");
+
+  React.useEffect(() => {
+    window.fetch(process.env.REACT_APP_CONTENFULSPACE, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          // Authenticate the request
+          Authorization: `Bearer ${process.env.REACT_APP_ACCESS_TOKEN}`,
+        },
+        // send the GraphQL query
+        body: JSON.stringify({ query }),
+      })
+      .then((response) => response.json())
+      .then(({ data, errors }) => {
+        if (errors) {
+          console.error(errors);
+        }
+        
+        setTeamData(data.teamCollection.items);
+      });
+  }, []);
+
+  const getRayProfileData=()=>{
+    var rayProfile = teamData.filter(x=>x.semester === "Professor");
+    if(rayProfile.length >0){
+      return rayProfile[0];
+    }
+    return null;
+  }
+
   return (
     <div>
-        <TeamIntroduction/>
-        <RayProfile/>
-        <Semester semesterName={spring2021Semester} profileList={spring2021SemesterProfileList} id={"spring2021"}/>           
-        <Semester semesterName={fall2020Semester} profileList={fall2020SemesterProfileList} id={"fall2020"}/>
+      <TeamIntroduction />
+      <RayProfile data={getRayProfileData()}/>
+      <Semester semesterName={semesterMap.get(spring2021Key)} profileList={teamData.filter(x=>x.semester === spring2021Key).reverse()} id={spring2021Key} />
+      <Semester semesterName={semesterMap.get(fall2020Key)} profileList={teamData.filter(x=>x.semester === fall2020Key).reverse()} id={fall2020Key} />
     </div>
   );
 }
