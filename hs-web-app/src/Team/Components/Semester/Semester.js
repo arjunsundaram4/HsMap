@@ -1,13 +1,19 @@
-import React, { useEffect }  from "react";
-import {Profile} from './Components/Profile'
-import {gsap,Power3} from "gsap";
-import {createRandomNumber} from "../../../Repository/RepositoryFunction";
+import React, { useEffect } from "react";
+import { Profile } from './Components/Profile'
+import { gsap, Power3 } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { createRandomNumber } from "../../../Repository/RepositoryFunction";
 import './Semester.css'
 
-export const Semester = (props)=>{
+export const Semester = (props) => {
     var uniqueId = props.id;
+
     useEffect(()=>{
-        
+        var list = props.profileList;
+        if(!list ||  list.length === 0){
+            return;
+        }
+
         var semesterNameTimeLine= gsap.timeline({
             scrollTrigger:{
                 trigger: `.semesterName${uniqueId}`,
@@ -38,28 +44,29 @@ export const Semester = (props)=>{
         for(i=0;i<props.profileList.length;i++){
             profileTimeLine.from(`#profileDiv${uniqueId}`+i,{opacity:0,duration: 1, ease: Power3.easeIn})
         }
-    });
+        
+    }, [props.profileList]);
 
     return (
         <div className={"semester"}>
             <div className={`semesterName semesterName${uniqueId}`}>
                 {
-                    props.semesterName.split('').map((eachChar,index)=>
-                        <div key={index} id={`semesterName${uniqueId}`+index}>{eachChar.replace(/ /g, "\u00a0")}</div>
+                    props.semesterName.split('').map((eachChar, index) =>
+                        <div key={index} id={`semesterName${uniqueId}` + index}>{eachChar.replace(/ /g, "\u00a0")}</div>
                     )
                 }
             </div>
             <div className={`profiles profiles${uniqueId}`} >
                 {
-                    props.profileList.map((profile,index)=>
-                        <div key={index} className={"profileDiv"} id={`profileDiv${uniqueId}`+index}>
+                    props.profileList.map((profile, index) =>
+                        <div key={index} className={"profileDiv"} id={`profileDiv${uniqueId}` + index}>
                             <Profile
-                                name={ profile.name }
-                                avatar={ profile.avatar }
-                                title={ profile.title }
-                                organization={ profile.organization }
-                                roles={ profile.roles }
-                                link={ profile.link }
+                                name={profile.name ?? ''}
+                                avatar={profile.avatar ?? ''}
+                                title={profile.title ?? ''}
+                                organization={profile.organization ?? ''}
+                                roles={profile.otherInfo?.roles ?? []}
+                                link={profile.link ?? ''}
                             />
                         </div>
                     )

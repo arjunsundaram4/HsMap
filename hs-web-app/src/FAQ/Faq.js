@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import "./Faq.css";
 import { useState, useEffect } from "react";
 import Pagination from "../Components/Pagination/Pagination"
-import {paginate} from "../Components/Pagination/usePagination"
+import { paginate } from "../Components/Pagination/usePagination"
+import { FaqItem } from "./Component/FaqItem/FaqItem";
 const query = `{
   faqCollection {
     items {
@@ -27,7 +28,7 @@ function Faq() {
     const paginationData = paginate(page, currentPage, pageSize);
     return { totalCount: page.length, data: paginationData }
   }
-  
+
   useEffect(() => {
     window
       .fetch(process.env.REACT_APP_CONTENFULSPACE, {
@@ -57,32 +58,26 @@ function Faq() {
   const { totalCount, data } = getPageData();
   return (
     <>
-    <div className={"bodyMarginTop bodyMarginBottom"}>
-      <div className={"modelContent"}>
-        <div className="text-center mainTitle">
-          Common FAQs from Professor and Team
-        </div>
-        <div className={"slides"}>
-          {data.map((faq) => (
-            <div>
-            <header className="App-header">
-              <h4 className={"title"}>{faq.questions}</h4>
-              <div>
-                <p>{faq.answers}</p>
-              </div>
-              <br></br>
-            </header>
-            </div>
-          ))}
+      <div className={"bodyMarginTop"}>
+        <div className={"modelContent"}>
+          <div className="text-center mainTitle">
+            Common FAQs from Professor and Team
+          </div>
+          <div>
+            {data.map((faq, index) => (
+              <FaqItem data={faq} id={index} />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
-            <Pagination
-            itemsCount={totalCount}
-            pageSize={pageSize}
-            currentPage={currentPage}
-            onPageChange={handlePageChange} />
-            </>
+      <div className={"paginationContainer"}>
+        <Pagination
+          itemsCount={totalCount}
+          pageSize={pageSize}
+          currentPage={currentPage}
+          onPageChange={handlePageChange} />
+      </div>
+    </>
   );
 }
 

@@ -3,18 +3,14 @@ import {gsap,Power3} from "gsap";
 import {createRandomNumber} from "../../../Repository/RepositoryFunction";
 import './RayProfile.css'
 
-export const ProfRayInfo={
-    name: 'Ray Simar',
-    avatar: '/assets/ray-simar.jpeg',
-    title: 'Professor in the Practice',
-    organization: 'Department of ECE at Rice University',
-    roles: ['Project Inspiration', 'Project Advisor', 'Fourier-based Analysis'],
-    link: 'https://profiles.rice.edu/faculty/ray-simar',
-    position: 'Project Manager'
-}
+export const RayProfile = (props)=>{
+    const ProfRayInfo = props.data;
 
-export const RayProfile = ()=>{
     useEffect(()=>{
+        if(!ProfRayInfo){
+            return;
+        }
+
         var rayTimeLine = gsap.timeline({
             scrollTrigger:{
                 trigger: ".rayDiv",
@@ -33,7 +29,7 @@ export const RayProfile = ()=>{
         for(i=0;i<ProfRayInfo.organization.length;i++){
             rayTimeLine.from("#rayOrg"+i,{opacity: 0,y: 100,duration: 1, ease: Power3.easeIn});
         }
-        for(i=0;i<ProfRayInfo.roles.length;i++){
+        for(i=0;i<ProfRayInfo.otherInfo.roles.length;i++){
             rayTimeLine.from("#rayRole"+i,{scale:0,duration: 1, ease: Power3.easeIn});
         }
 
@@ -48,9 +44,11 @@ export const RayProfile = ()=>{
         for(i=0;i<ProfRayInfo.position.length;i++){
             rayDivNameTimeLine.from("#rayPosition"+i,{opacity: 0,x:createRandomNumber(50,80,true),y: createRandomNumber(50,80,true),duration: 1, ease: Power3.easeIn});
         }
-    });
+    }, [ProfRayInfo]);
 
-
+    if(!ProfRayInfo){
+        return <div></div>
+    }
     return (
         <div className={"rayDiv"}>
             <div className={"rayPosition"}>
@@ -62,7 +60,9 @@ export const RayProfile = ()=>{
             </div>
             <div>
                 <div className={"rayImageDiv"}>
-                    <img src={ProfRayInfo.avatar}/>
+                    <a href={ProfRayInfo.link} target={"_blank"}>
+                        <img src={ProfRayInfo.avatar.url}/>
+                    </a>
                 </div>
                 <div className={"rayInfo"}>
                     <div className={"rayName"}>
@@ -88,7 +88,7 @@ export const RayProfile = ()=>{
                     </div>
                     <div className={"rayRoles"}>
                         {
-                            ProfRayInfo.roles.map((role,index)=>
+                            ProfRayInfo.otherInfo.roles.map((role,index)=>
                                 <div id={"rayRole"+index} key={index}>{role}</div>
                             )
                         }

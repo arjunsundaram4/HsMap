@@ -1,7 +1,7 @@
 import React, { useState,lazy,Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { NavBar } from '../Navbar/Navbar';
+import { NavBar } from '../NavBar/Navbar';
 const Home = lazy(() => import("../Home/Home"));
 const About = lazy(() => import("../About/About"));
 const MapTableau = lazy(() => import("../MapTableau/MapTableau"));
