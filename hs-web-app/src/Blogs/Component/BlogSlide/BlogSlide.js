@@ -43,7 +43,7 @@ export const BlogSlide = (props) => {
                     )}
                 </div>
                 <div className={"slideContent"}>
-                    <p>{data.information}</p>
+                    <div style={{ whiteSpace: "pre-line" }}>{data.information}</div>
                     {data.date && <div className={"slideDate"}>{getDateTime(data.date)}</div>}
                 </div>
             </div>
