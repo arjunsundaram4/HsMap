@@ -31,7 +31,7 @@ export const FaqItem = (props) => {
                 <img src={"/images/question-mark.png"} />
                 <div>{data.questions}</div>
             </div>
-            <div className={"faqAnswer"}>{data.answers}</div>
+            <div className={"faqAnswer"} style={{ whiteSpace: "pre-line" }}>{data.answers}</div>
         </div>
     )
 }

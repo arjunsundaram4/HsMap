@@ -1,6 +1,6 @@
 .slide{
     margin: 30px 0;
-    padding: 20px;
+    padding: 20px 20px 40px 20px;
     border-radius: 15px;
     box-shadow:
         0  5px 10px rgba(154,160,185,0.05),
@@ -11,7 +11,6 @@
 .slideTitle{
     font-size: 28px;
     font-weight: bold;
-    margin-left: 20px;
 }
 
 .slideContentContainer{
