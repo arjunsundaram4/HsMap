@@ -1,8 +1,9 @@
-import React, { Component,useMemo } from "react";
+import React from "react";
 import "./Blogs.css";
 import { useState, useEffect } from "react";
 import Pagination from "../Components/Pagination/Pagination"
-import {paginate} from "../Components/Pagination/usePagination"
+import { paginate } from "../Components/Pagination/usePagination"
+import { BlogSlide } from "./Component/BlogSlide/BlogSlide";
 const query = `{
   pageCollection {
     items {
@@ -30,7 +31,7 @@ function Blog() {
     const paginationData = paginate(page, currentPage, pageSize);
     return { totalCount: page.length, data: paginationData }
   }
-  
+
   useEffect(() => {
     window
       .fetch(process.env.REACT_APP_CONTENFULSPACE, {
@@ -51,7 +52,7 @@ function Blog() {
 
         // rerender the entire component with new data
         setPage(data.pageCollection.items);
-        
+
       });
   }, []);
   console.log(page);
@@ -61,47 +62,26 @@ function Blog() {
   const { totalCount, data } = getPageData();
   return (
     <>
-    <div className={"bodyMarginTop bodyMarginBottom"}>
-      <div className={"modelContent"}>
-        <div className="text-center mainTitle">
-          Blog Posts from Professor and Team
-        </div>
-        <div className={"slides"}>
-          {data?.map((pages) => (
-            <div>
-            <header className="App-header">
-              <h4 className={"title"}>{pages.title}</h4>
-              <div>
-                {pages.image ? (
-                  <img
-                    width="300px"
-                    height="150px"
-                    src={pages.image?.url}
-                    align="left"
-                    style={{ marginRight: "100px" }}
-                    className="img-align"
-                    alt="logo"
-                  />
-                ) : (
-                  <></>
-                )}
-                <p>{pages.information}</p>
-              </div>
-              {pages.date ? <p>{pages.date}</p> : <></>}
-              <br></br>
-            </header>
-            </div>
-          ))}
+      <div className={"bodyMarginTop"}>
+        <div className={"modelContent"}>
+          <div className="text-center mainTitle">
+            Blog Posts from Professor and Team
+          </div>
+          <div>
+            {data?.map((pages, index) => (
+              <BlogSlide data={pages} id={index} />
+            ))}
+          </div>
         </div>
       </div>
-      
-    </div>
-            <Pagination
-            itemsCount={totalCount}
-            pageSize={pageSize}
-            currentPage={currentPage}
-            onPageChange={handlePageChange} />
-            </>
+      <div className={"paginationContainer"}>
+        <Pagination
+          itemsCount={totalCount}
+          pageSize={pageSize}
+          currentPage={currentPage}
+          onPageChange={handlePageChange} />
+      </div>
+    </>
   );
 }
 
