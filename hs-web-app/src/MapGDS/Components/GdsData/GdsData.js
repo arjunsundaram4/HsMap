@@ -22,7 +22,7 @@ export const GdsData = [
       },
       {
         title: "Overlap",
-        url: process.env.REACT_APP_OVERLAP,
+        url: process.env.REACT_APP_GDS_OVERLAP,
       },
       {
         title: "Side by side",
