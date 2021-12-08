@@ -17,7 +17,7 @@ export const BlogSlide = (props) => {
             opacity: 0, y: 100, duration: 1, ease: "linear", scrollTrigger: {
                 trigger: `.blogSlide${id}`,
                 start: "top 70%",
-                end: "bottom 100%",
+                end: "top 100%",
                 scrub: 1
             }
         });
