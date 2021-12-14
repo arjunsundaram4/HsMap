@@ -1,0 +1,134 @@
+.dashboardTab{
+    text-align: center;
+    width:100%;
+    margin-top: 30px;
+}
+.dashboardTab > *{
+    width:1100px;
+    margin: 0 auto;
+}
+
+.leaflet-container {
+    width: 100%;
+    height: 100vh;
+}
+
+.leaflet-container{
+  position: relative; top: 0px; right: 0; bottom: 0; left: 0;
+  width: 1000px;
+  height: 800px;
+  z-index: 1;
+}
+
+/* Info Bar */
+
+.info {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    z-index: 99;
+}
+.info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}
+
+
+/* Spinner */
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(255, 255, 255);
+  
+    margin: auto;
+    -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+    animation: sk-rotateplane 1.2s infinite ease-in-out;
+
+    display: none;            /* establish flex container */
+    flex-direction: column;   /* align children vertically (column format) */
+    justify-content: center;  /* center children vertically */
+    align-items: center;      /* center column horizontally */
+    z-index: 9999;
+
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);  
+  }
+  
+  @-webkit-keyframes sk-rotateplane {
+    0% { -webkit-transform: perspective(120px) }
+    50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+    100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+  }
+  
+  @keyframes sk-rotateplane {
+    0% { 
+      transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+      -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+    } 50% { 
+      transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+      -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+    } 100% { 
+      transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+      -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    }
+  }
+
+  .legend {
+    line-height: 18px;
+    color: #555;
+  }
+  .legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+  }
+
+
+  #overlay {
+    position: relative;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: -40px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.9);
+    z-index: 1003;
+    cursor: pointer;
+  }
+
+  .map-data-input{
+    z-index: 1002;
+    top: 5px;
+    position: absolute;
+    left: 10px;
+    color: white;
+  }
+
+  .map-data-input > * {
+    margin-right: 10px
+  }
+
+  .map-data-input-second-row {
+    top: 36px;
+  }
+.map-data-input-panel {
+  
+  height: 65px;
+  width: 670px;
+  z-index: 1002;
+  position: absolute;
+  top: 10px;
+  left: 50px;
+}
+.infoRowTitle{
+  color:black;
+}

@@ -1,6 +1,37 @@
 import React from 'react';
 import './MapGDS.css';
-import { GdsData } from './Components/GdsData/GdsData.js';
+
+const GDS_DATA=[
+  {
+    title:"Overview",
+    url:"https://datastudio.google.com/embed/reporting/e70cf709-d828-44b7-a1d8-8023088dff5d/page/TxgjB",
+    subTab: false
+  },
+  {
+    title:"Four Zones Concept",
+    url:"https://datastudio.google.com/embed/reporting/e70cf709-d828-44b7-a1d8-8023088dff5d/page/cm8pB",
+    subTab: false
+  },
+  {
+    title:"Play with GDS",
+    url:"",
+    subTab: true,
+    subTabInfo:[
+      {
+        title: "Four Zones",
+        url: "https://datastudio.google.com/embed/reporting/e70cf709-d828-44b7-a1d8-8023088dff5d/page/dF9pB"
+      },
+      {
+        title: "Overlap",
+        url: "https://datastudio.google.com/embed/reporting/e70cf709-d828-44b7-a1d8-8023088dff5d/page/sh18B"
+      },
+      {
+        title: "Side by side",
+        url: "https://datastudio.google.com/embed/reporting/e70cf709-d828-44b7-a1d8-8023088dff5d/page/uJ18B"
+      }
+    ]
+  },
+];
 
 
 class MapGDS extends React.Component{
@@ -31,47 +62,47 @@ class MapGDS extends React.Component{
     }
     return (
       <div className="bodyMarginTop">
-      <div className={"customTab"}>
+        <div className={"customTab"}>
           {
-          GdsData.map((data, idx) => {
+            GDS_DATA.map((data, idx) => {
               return <div className={(idx==this.state.view)?"tabPressed":"tabUnPressed"} onClick={(e)=>{this.pressTab(idx)}}><span>{data.title}</span></div>
-          })
+            })
           }
-      </div>
-      <div className={"iframeTab"}>
+        </div>
+        <div className={"iframeTab"}>
           {
-          GdsData.map((data,index)=>{
+            GDS_DATA.map((data,index)=>{
               if(data.subTab){
-              return (
-                  <div style={this.state.view==index?showClass:hideClass}>
-                      <div className="customTab2">
-                      {
-                          data.subTabInfo.map((subTab,myIndex)=>{
-                          return <div className={(myIndex==this.state.subView)?"tabPressed2":"tabUnPressed2"} onClick={(e)=>{this.pressSubTab(myIndex)}}>{subTab.title}</div>
-                          })
-                      }
-                      </div>
-                      <div className={"subTabIframes"}>
-                      {
-                          data.subTabInfo.map((subTab,myIndex)=>{
-                          return <iframe scrolling="yes" frameBorder="0" title="COVID-19 Map with GDS"
-                                          src={ subTab.url }
-                                          allowFullScreen style={this.state.subView==myIndex?showClass:hideClass}/>
-                          })
-                      }
-                      </div>
-                  </div>
-              )
+                 return (
+                     <div style={this.state.view==index?showClass:hideClass}>
+                       <div className="customTab2">
+                         {
+                           data.subTabInfo.map((subTab,myIndex)=>{
+                             return <div className={(myIndex==this.state.subView)?"tabPressed2":"tabUnPressed2"} onClick={(e)=>{this.pressSubTab(myIndex)}}>{subTab.title}</div>
+                           })
+                         }
+                       </div>
+                       <div className={"subTabIframes"}>
+                         {
+                           data.subTabInfo.map((subTab,myIndex)=>{
+                             return <iframe scrolling="yes" frameBorder="0" title="COVID-19 Map with GDS"
+                                            src={ subTab.url }
+                                            allowFullScreen style={this.state.subView==myIndex?showClass:hideClass}/>
+                           })
+                         }
+                       </div>
+                     </div>
+                 )
 
               }
               return <iframe scrolling="yes" frameBorder="0" title="COVID-19 Map with GDS"
-                          src={ data.url }
-                          allowFullScreen style={this.state.view==index?showClass:hideClass}/>
-          })
+                             src={ data.url }
+                             allowFullScreen style={this.state.view==index?showClass:hideClass}/>
+            })
           }
+        </div>
       </div>
-      </div>
-  );
+    );
   }
 }
 
