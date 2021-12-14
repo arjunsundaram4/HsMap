@@ -672,6 +672,10 @@ function MapLogic() {
                   isoToCovidData[item.region.iso].deaths += item.deaths
                   isoToCovidData[item.region.iso].deaths_diff += item.deaths_diff
 
+                  isoToCovidData[item.region.iso].recovered += item.recovered
+                  isoToCovidData[item.region.iso].recovered_diff += item.recovered_diff
+
+
                // Else create new entry
                } else {
                   isoToCovidData[item.region.iso] = {
@@ -685,7 +689,9 @@ function MapLogic() {
                      confirmed_diff: item.confirmed_diff,
                      deaths: item.deaths,
                      deaths_diff: item.deaths_diff,
-                     fatality_rate: item.fatality_rate
+                     fatality_rate: item.fatality_rate,
+                     recovered: item.recovered,
+                     recovered_diff: item.recovered_diff
                   }
                }
                }
