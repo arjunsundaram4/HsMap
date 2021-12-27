@@ -1,8 +1,9 @@
 import React, { useState,lazy,Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { NavBar } from '../NavBar/Navbar';
+import { NavBar } from '../NavBar/NavBar';
 const Home = lazy(() => import("../Home/Home"));
+const Propositions = lazy(() => import("../Propositions/Propositions"));
 const About = lazy(() => import("../About/About"));
 const MapTableau = lazy(() => import("../MapTableau/MapTableau"));
 const MapGDS = lazy(() => import("../MapGDS/MapGDS"));
@@ -14,6 +15,10 @@ const sites = [
   {
     name: "Home",
     location: "/",
+  },
+  {
+    name: "Propositions",
+    location: "/propositions",
   },
   {
     name: "About",
@@ -54,6 +59,9 @@ function SiteRouter() {
       <Suspense fallback={<div>Loading...</div>}>  
       <NavBar navItems={sites} onItemClick={setNavIndex} selectedIndex={navIndex}/>
       <Switch>
+        <Route exact path="/propositions">
+          <Propositions />
+        </Route>
         <Route exact path="/about">
           <About />
         </Route>
