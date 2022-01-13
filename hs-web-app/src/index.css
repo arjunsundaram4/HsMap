@@ -18,10 +18,21 @@ code {
 
 
 
-.customTab,.customTab2{
+.customTab,.customTab2, .customTab3{
   display:flex;
   justify-content: center;
   align-items: center;
+}
+.customTab3 > div {
+  padding: 10px;
+  border-bottom: 2px solid #0d2149;
+  border-top: 2px solid #0d2149;
+  margin: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  min-width: 200px;
+  text-align: center;
 }
 .customTab>div{
   padding: 10px;
@@ -107,7 +118,7 @@ code {
   color: white;
 }
 @media only screen and (max-width: 1000px) {
-  .customTab{
+  .customTab, .customTab2, .customTab3{
     flex-direction: column;
   }
 }
