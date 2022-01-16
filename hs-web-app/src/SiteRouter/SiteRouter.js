@@ -10,7 +10,7 @@ const Modeling = lazy(() => import("../Modeling/Modeling"));
 const Team = lazy(() => import("../Team/Team"));
 const Blog = lazy(() => import("../Blogs/Blogs"));
 const Faq = lazy(() => import("../FAQ/Faq"));
-// const MapLeaflet=lazy(()=> import ("../MapLeaflet/MapLeaflet"))
+const MapLeaflet=lazy(()=> import ("../MapLeaflet/MapLeaflet"))
 const Propositions = lazy(() => import("../Propositions/Propositions"));
 const sites = [
   {
@@ -34,6 +34,10 @@ const sites = [
     location: "/faq",
   },
   {
+    name:"Leaflet Map",
+    location:"/map/leaflet"
+  },
+  {
     name: "Tableau Map",
     location: "/map/tableau",
   },
@@ -41,10 +45,6 @@ const sites = [
     name: "GDS Map",
     location: "/map/gds",
   },
-  // {
-  //   name:"Leaflet Map",
-  //   location:"/map/leaflet"
-  // },
   {
     name: "Modeling",
     location: "/modeling",
@@ -73,12 +73,12 @@ function SiteRouter() {
         <Route exact path="/blogs">
           <Blog />
         </Route>
+        <Route path="/map/leaflet">
+          <MapLeaflet />
+        </Route>
         <Route exact path="/map/gds">
           <MapGDS />
         </Route>
-        {/* <Route path="/map/leaflet">
-          <MapLeaflet />
-        </Route> */}
         <Route path="/map/tableau">
           <MapTableau />
         </Route>
