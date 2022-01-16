@@ -581,7 +581,10 @@ function MapLogic() {
             map.flyTo(new L.LatLng(continentMapView[mapOptions.continent].lat, continentMapView[mapOptions.continent].lon), continentMapView[mapOptions.continent].zoom);
 
             function updateNext(d, maxD, timeout) {
-
+               
+               if (window.location.href.slice(-7) != "leaflet")
+                  return;
+               
                if (geojsonLayer)
                   map.removeLayer(geojsonLayer)
    
